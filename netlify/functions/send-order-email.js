@@ -1,5 +1,14 @@
 exports.handler = async function (event) {
+  console.log("Function hit");
+  console.log("API key exists:", !!process.env.RESEND_API_KEY);
+
   const order = JSON.parse(event.body);
+
+  const storeEmail = "madbrand@gmail.com";
+
+  const recipients = order.email
+    ? [order.email, storeEmail]
+    : [storeEmail];
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -9,16 +18,17 @@ exports.handler = async function (event) {
     },
     body: JSON.stringify({
       from: "BagelsRUs <orders@mail.bagelsrusnc.com>",
-      to: ["YOUR_EMAIL_HERE@gmail.com"],
+      to: recipients,
       subject: `New Order ${order.orderNumber}`,
       html: `
         <h2>New Order ${order.orderNumber}</h2>
         <p><strong>Name:</strong> ${order.name}</p>
-        <p><strong>Email:</strong> ${order.email}</p>
-        <p><strong>Phone:</strong> ${order.phone}</p>
+        <p><strong>Email:</strong> ${order.email || "N/A"}</p>
+        <p><strong>Phone:</strong> ${order.phone || "N/A"}</p>
         <p><strong>Order Type:</strong> ${order.orderType}</p>
         <p><strong>Address:</strong> ${order.deliveryAddress || "N/A"}</p>
         <p><strong>Notes:</strong> ${order.notes || "None"}</p>
+
         <h3>Items</h3>
         <ul>
           ${order.items.map(item => `
@@ -28,16 +38,21 @@ exports.handler = async function (event) {
             </li>
           `).join("")}
         </ul>
-        <p><strong>Total:</strong> $${order.total.toFixed(2)}</p>
+
+        <p><strong>Subtotal:</strong> $${Number(order.subtotal).toFixed(2)}</p>
+        <p><strong>Tax:</strong> $${Number(order.tax).toFixed(2)}</p>
+        <p><strong>Total:</strong> $${Number(order.total).toFixed(2)}</p>
       `
     })
   });
 
   const data = await res.json();
 
-  if (!res.ok) {
-    return { statusCode: 400, body: JSON.stringify(data) };
-  }
+  console.log("Resend status:", res.status);
+  console.log("Resend response:", data);
 
-  return { statusCode: 200, body: JSON.stringify(data) };
+  return {
+    statusCode: res.ok ? 200 : 400,
+    body: JSON.stringify(data)
+  };
 };
