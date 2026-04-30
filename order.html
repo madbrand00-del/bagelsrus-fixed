@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bagels'R'us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="top-left-group">
+    <a href="index.html" class="ghost-btn back-home-btn">← Back to Home</a>
+    <div class="brand-mini">Bagels'R'us</div>
+  </div>
+
+  <nav class="top-actions right-actions">
+    <button class="ghost-btn cart-toggle-btn" id="cartToggleBtn">
+      Cart <span id="cartCountBadge">0</span>
+    </button>
+  </nav>
+</header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Breakfast • Lunch • Fresh Daily</p>
+        <h1>Bagels'R'us</h1>
+        <p class="hero-tagline">
+          Freshly made bagels, hearty breakfast favorites, and deli-style lunches served fast and packed with flavor.
+        </p>
+      </div>
+    </section>
+
+    <main class="main-grid single-column-layout">
+      <section class="content-area">
+        <div class="menu-switcher">
+          <button class="menu-tab active" data-tab="breakfast">Breakfast Menu</button>
+          <button class="menu-tab" data-tab="lunch">Lunch Menu</button>
+        </div>
+
+        <section id="menuContainer"></section>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal hidden" id="cartModal">
+    <div class="modal-card cart-modal-card">
+      <button class="close-btn" data-close="cartModal">&times;</button>
+      <div class="cart-card cart-card-modal">
+        <div class="section-heading">
+          <div>
+            <h2>Your Cart</h2>
+            <p>Review your order before checkout.</p>
+          </div>
+          <button class="ghost-btn small-btn" id="clearCartBtn">Clear</button>
+        </div>
+        <div id="cartItems"></div>
+        <div class="cart-summary">
+          <div class="summary-row"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div>
+          <div class="summary-row"><span>Estimated Tax (8%)</span><strong id="cartTax">$0.00</strong></div>
+          <div class="summary-row total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+        </div>
+        <button class="primary-btn full-btn" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="authChooserModal">
+    <div class="modal-card auth-chooser-card">
+      <button class="close-btn" data-close="authChooserModal">&times;</button>
+      <h2>Admin &amp; Cashier</h2>
+      <p>Choose which area you want to open.</p>
+      <div class="auth-choice-grid">
+        <button class="primary-btn full-btn" id="openAdminLoginChoice">Admin Sign In</button>
+        <button class="ghost-btn full-btn" id="openCashierLoginChoice">Cashier Sign In</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="itemModal">
+    <div class="modal-card large-modal">
+      <button class="close-btn" data-close="itemModal">&times;</button>
+      <div id="itemModalContent"></div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="adminLoginModal">
+    <div class="modal-card">
+      <button class="close-btn" data-close="adminLoginModal">&times;</button>
+      <h2>Admin Sign In</h2>
+      <p>Enter your username and password to continue.</p>
+      <label>Username</label>
+      <input id="adminUsername" type="text" placeholder="Enter username" />
+      <label>Password</label>
+      <input id="adminPassword" type="password" placeholder="Enter password" />
+      <button class="primary-btn full-btn" id="submitAdminLogin">Open Admin Dashboard</button>
+      <p class="tiny-note" id="adminLoginMessage"></p>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="cashierLoginModal">
+    <div class="modal-card">
+      <button class="close-btn" data-close="cashierLoginModal">&times;</button>
+      <h2>Cashier Sign In</h2>
+      <p>Enter your username and password to continue.</p>
+      <label>Username</label>
+      <input id="cashierUsername" type="text" placeholder="Enter username" />
+      <label>Password</label>
+      <input id="cashierPassword" type="password" placeholder="Enter password" />
+      <button class="primary-btn full-btn" id="submitCashierLogin">Open Cashier Dashboard</button>
+      <p class="tiny-note" id="cashierLoginMessage"></p>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="adminDashboardModal">
+    <div class="modal-card large-modal">
+      <button class="close-btn" data-close="adminDashboardModal">&times;</button>
+      <div class="section-heading">
+        <div>
+          <h2>Admin Dashboard</h2>
+          <p>Only admin can edit the menu.</p>
+        </div>
+        <button class="ghost-btn small-btn" id="logoutAdminBtn">Log Out</button>
+      </div>
+
+      <div class="editor-grid">
+        <div class="card">
+          <h3>Edit Existing Item</h3>
+          <label>Meal</label>
+          <select id="editMealSelect"></select>
+          <label>Section</label>
+          <select id="editSectionSelect"></select>
+          <label>Item</label>
+          <select id="editItemSelect"></select>
+
+          <label>Name <span class="required-mark">*</span></label>
+          <input id="editName" type="text" />
+          <label>Price</label>
+          <input id="editPrice" type="number" step="0.01" />
+          <label>Description</label>
+          <textarea id="editDesc" rows="4"></textarea>
+          <label>Image URL</label>
+          <input id="editImage" type="text" />
+
+          <div class="stacked-actions">
+            <button class="primary-btn" id="saveItemBtn">Save Changes</button>
+            <button class="danger-btn" id="deleteItemBtn">Delete Item</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Add New Item</h3>
+          <label>Meal</label>
+          <select id="addMealSelect"></select>
+          <label>Section</label>
+          <select id="addSectionSelect"></select>
+          <label>Name</label>
+          <input id="addName" type="text" />
+          <label>Price</label>
+          <input id="addPrice" type="number" step="0.01" />
+          <label>Description</label>
+          <textarea id="addDesc" rows="4"></textarea>
+          <label>Image URL</label>
+          <input id="addImage" type="text" />
+
+          <div class="stacked-actions">
+            <button class="primary-btn" id="addItemBtn">Add Item</button>
+            <button class="ghost-btn" id="resetMenuBtn">Reset Menu to Default</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="cashierDashboardModal">
+    <div class="modal-card large-modal">
+      <button class="close-btn" data-close="cashierDashboardModal">&times;</button>
+      <div class="section-heading">
+        <div>
+          <h2>Cashier Dashboard</h2>
+          <p>Cashier can only view and update orders.</p>
+        </div>
+        <div class="toolbar-actions">
+          <button class="ghost-btn small-btn" id="refreshOrdersBtn">Refresh</button>
+          <button class="ghost-btn small-btn" id="logoutCashierBtn">Log Out</button>
+        </div>
+      </div>
+      <div id="cashierOrders"></div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="checkoutModal">
+    <div class="modal-card large-modal">
+      <button class="close-btn" data-close="checkoutModal">&times;</button>
+      <div class="account-grid checkout-grid">
+        <div class="card">
+          <h2>Checkout</h2>
+          <p class="tiny-note">Enter your name and at least one contact method. You can provide a phone number, an email, or both. This browser will remember previous contact info and matching past orders.</p>
+          <label>Name</label>
+          <input id="guestName" type="text" placeholder="Your full name" />
+          <label>Email</label>
+          <input id="guestEmail" type="email" placeholder="Email for updates" />
+          <label>Phone</label>
+          <input id="guestPhone" type="tel" placeholder="Phone number" />
+
+          <label>Order Type <span class="required-mark">*</span></label>
+<div class="order-type-row">
+  <label class="order-type-pill">
+    <input type="radio" name="orderType" value="Pickup" checked />
+    <span>Pickup</span>
+  </label>
+
+  <label class="order-type-pill">
+    <input type="radio" name="orderType" value="Delivery" />
+    <span>Delivery</span>
+  </label>
+</div>
+
+<div id="deliveryAddressWrap" class="delivery-address-wrap hidden">
+  <label>Delivery Address</label>
+  <input id="deliveryAddress" type="text" placeholder="Enter delivery address" />
+</div>
+
+          <label>Order Notes</label>
+          <textarea id="orderNotes" rows="4" placeholder="Anything we should know?"></textarea>
+          <button class="primary-btn full-btn" id="placeOrderBtn">Place Order</button>
+        </div>
+
+        <div class="card">
+          <h2>Order Summary</h2>
+          <div id="checkoutSummary"></div>
+          <div class="checkout-history-wrap">
+            <h3>Previous Orders</h3>
+            <div id="checkoutHistory" class="tiny-note">
+              Enter an email or phone number to see saved orders on this browser.
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="tiny-note" id="checkoutMessage"></p>
+    </div>
+  </div>
+
+ 
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<div class="modal hidden" id="kitchenDashboardModal">
+  <div class="modal-card large-modal">
+    <button class="close-btn" data-close="kitchenDashboardModal">&times;</button>
+    <div class="section-heading">
+      <div>
+        <h2>Kitchen Dashboard</h2>
+        <p>Kitchen can view queued orders and mark them ready.</p>
+      </div>
+      <div class="toolbar-actions">
+        <button class="ghost-btn small-btn" id="refreshKitchenOrdersBtn">Refresh</button>
+        <button class="ghost-btn small-btn" id="logoutKitchenBtn">Log Out</button>
+      </div>
+    </div>
+    <div id="kitchenOrders"></div>
+  </div>
+</div>

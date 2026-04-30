@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Bagels'R'us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mini">Bagels'R'us</div>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="menu.html">Menu</a>
+      <a href="location.html">Location</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="order.html" class="primary-btn nav-order-btn">Order Now</a>
+    </div>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-hero-banner">
+      <div class="auth-hero-box">
+        <h1>Admin Login</h1>
+        <p>Sign in to manage menu items and updates.</p>
+      </div>
+    </section>
+
+    <section class="auth-page-content">
+      <div class="auth-login-card">
+        <h2>Admin Sign In</h2>
+        <p>Enter your username and password to continue.</p>
+
+        <label>Username</label>
+        <input id="adminUsername" type="text" placeholder="Enter username" />
+
+        <label>Password</label>
+        <input id="adminPassword" type="password" placeholder="Enter password" />
+
+        <button class="primary-btn full-btn" id="submitAdminLogin">Open Admin Dashboard</button>
+        <p class="tiny-note" id="adminLoginMessage"></p>
+
+        <div class="auth-back-link">
+          <a href="index.html">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
