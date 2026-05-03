@@ -411,8 +411,8 @@ button {
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   background: #f2e0cf;
   color: var(--text);
   width: 36px;
@@ -1723,4 +1723,29 @@ textarea {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.cart-modal-card .close-btn {
+  top: 7px;
+  right: 7px;
+  transform: none;
+}
+
+.modal-card .close-btn {
+  top: 7px;
+  right: 7px;
+  transform: none;
+}
+
+.cart-modal-card .close-btn,
+.large-modal .close-btn,
+.auth-chooser-card .close-btn {
+  top: 1px;
+  right: 1px;
+  transform: none;
+}
+
+.complete-btn {
+  background: var(--success);
+  color: white;
 }
