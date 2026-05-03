@@ -2179,6 +2179,24 @@ async function updateOrderStatus(id, status) {
     }
   }
 
+  if (status === "Completed" && updatedOrder?.phone) {
+  try {
+    await fetch("/.netlify/functions/send-order-ready-text", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        orderNumber: updatedOrder.order_number || updatedOrder.id,
+        name: updatedOrder.customer_name || "Customer",
+        phone: updatedOrder.phone
+      })
+    });
+  } catch (textError) {
+    console.error("Ready text failed:", textError);
+  }
+}
+
   await renderCashierOrders();
   await renderKitchenOrders();
 }
