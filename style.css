@@ -1748,4 +1748,12 @@ textarea {
 .complete-btn {
   background: var(--success);
   color: white;
+  padding: 13px 18px;
+  border-radius: 14px;
+  font-weight: 700;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.2s ease;
+}
+
+.complete-btn:hover {
+  transform: translateY(-1px);
 }
