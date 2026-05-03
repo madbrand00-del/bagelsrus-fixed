@@ -66,93 +66,101 @@ const customOptions = {
 };
 
 const defaultMenu = {
-  breakfast: {
-    bagels: [
-      { name: "Plain", price: 2.25, desc: "Classic soft and chewy New York-style bagel.", image: "https://media.istockphoto.com/id/457220783/photo/bagels.jpg?s=612x612&w=0&k=20&c=-BKkn9JWn25zGScjOLq_RP_YJB_J7nFyM5mzaNY-rgI=" },
-      { name: "Everything", price: 2.25, desc: "Garlic, onion, sesame, poppy & salt blend.", image: "https://newcascadiatraditional.com/cdn/shop/products/everything_bagel2_1024x1024.jpg?v=1539724257" },
-      { name: "Asiago", price: 2.75, desc: "Baked with savory Asiago cheese crust.", image: "https://media.istockphoto.com/id/464824509/photo/bagels.jpg?s=612x612&w=0&k=20&c=jHd2sYyM9eiN9en5DSpOKj9FntyFYEtSrfjPzwY4ulU=" },
-      { name: "Cinnamon Raisin", price: 2.50, desc: "Sweet cinnamon swirl with plump raisins.", image: "https://media.istockphoto.com/id/172927552/photo/cinnamon-raisin-bagel.jpg?s=612x612&w=0&k=20&c=1_g9rco5xmwyxqS599C2_aIkDfKDTXRAh4DIH4UktfA=" },
-      { name: "Blueberry", price: 2.75, desc: "Lightly sweet with real blueberry flavor.", image: "https://media.istockphoto.com/id/178511401/photo/blueberry-bagels-on-wood.jpg?s=612x612&w=0&k=20&c=5plysxa06JxcMJTS6y75gOQ62lPFMjLJKT8Zo9xnvi4=" },
-      { name: "Jalapeno Cheddar", price: 2.50, desc: "Cheddar baked in with a mild jalapeño kick.", image: "https://thumbs.dreamstime.com/b/cheddar-jalapeno-bagel-delicious-cheese-rustic-wood-table-top-170935927.jpg" },
-      { name: "Sesame", price: 2.25, desc: "Toasty sesame seeds on a classic base.", image: "https://thumbs.dreamstime.com/b/closeup-sesame-bagel-leaning-stack-similar-bagels-white-438466183.jpg" },
-      { name: "Salt", price: 2.25, desc: "Traditional bagel topped with coarse salt.", image: "https://iambaker.net/wp-content/uploads/2020/04/salt-bagel-1.jpg" },
-      { name: "Onion", price: 2.25, desc: "Baked with roasted onion flakes.", image: "https://media.istockphoto.com/id/1011605510/photo/homemade-roasted-onion-bagels.jpg?s=612x612&w=0&k=20&c=vB0j_orZbjS-EPfvcbrjy46ZTJcD3_8vSi_Sd4_489M=" },
-      { name: "Poppy Seed", price: 2.25, desc: "Nutty poppy seed crust.", image: "https://media.istockphoto.com/id/499284106/photo/bagels.jpg?s=612x612&w=0&k=20&c=d0zCif8wraSrdkfB7XqioohRBcZxKRmbL-qtgK49ctQ=" }
-    ],
-    creamCheese: [
-      { name: "Plain", price: 1.75, desc: "Classic cream cheese spread.", image: "https://rogueproduce.com/wp-content/uploads/2019/08/Plain-Cream-Cheese.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 1.75, "7oz": 5.50 }, pricePrefix: "From" },
-      { name: "Strawberry", price: 2.00, desc: "Lightly sweet with real berry flavor.", image: "https://media.istockphoto.com/id/529651781/photo/strawberry-cream-cheese.jpg?s=612x612&w=0&k=20&c=xCb6pmEKowZDm-5aIjKHa6jjArYTaikdT5Max49K3s0=", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" },
-      { name: "Scallion", price: 2.00, desc: "Savory cream cheese with fresh green onion.", image: "https://mytherapistcooks.com/wp-content/uploads/2025/03/IMG_2193.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" },
-      { name: "Honey Walnut", price: 2.00, desc: "Sweet honey with crunchy walnuts.", image: "https://pinchofwellness.com/wp-content/uploads/2023/02/honey-walnut-cream-cheese-11.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" },
-      { name: "Chocolate", price: 2.00, desc: "Dessert-style, creamy cocoa spread.", image: "https://wellnessbykay.com/wp-content/uploads/2023/05/easy-cream-cheese-chocolate-chip-dip-684x1024.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" },
-      { name: "Caper", price: 2.00, desc: "Briny deli-style spread, perfect with lox.", image: "https://www.cookedandloved.com/wp-content/uploads/2021/07/chive-cream-cheese-radishes-2.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" },
-      { name: "Hot Honey", price: 2.00, desc: "Sweet heat with a hint of chili.", image: "https://thefamilyfoodkitchen.com/burrata-hot-honey/", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" }
-    ],
-    specialties: [
-      { name: "Bacon, Egg & Cheese", price: 8.50, desc: "Crispy bacon, fluffy egg, melted cheese on your choice of bagel.", image: "https://thumbs.dreamstime.com/b/breakfast-sandwich-close-up-toasted-sesame-bagel-slab-bacon-egg-melted-cheese-33679038.jpg", customizable: true, configType: "breakfastSandwich", baseIngredients: ["Bacon", "Egg", "Cheese"] },
-      { name: "Sausage, Egg & Cheese", price: 8.50, desc: "Savory sausage with egg and cheese, toasted hot.", image: "https://media.istockphoto.com/id/951180660/photo/sausage-egg-and-cheese-breakfast-sandwich.jpg?s=612x612&w=0&k=20&c=lTMzDmOHJSHhJNfSVUvOHt8CxM8eSYMoNaDsRdBTPv4=", customizable: true, configType: "breakfastSandwich", baseIngredients: ["Sausage", "Egg", "Cheese"], requireSausageStyle: true },
-      { name: "Ham, Egg & Cheese", price: 8.50, desc: "Grilled ham, egg, and melty cheese.", image: "https://media.istockphoto.com/id/465509440/photo/taylor-ham-breakfast-sandwich.jpg?s=612x612&w=0&k=20&c=FlA9tYTEafSGV43Qw8vOLj2ziUjeNuYKZmB_RLunfPY=", customizable: true, configType: "breakfastSandwich", baseIngredients: ["Ham", "Egg", "Cheese"] },
-      { name: "Steak, Egg & Cheese", price: 8.50, desc: "Grilled steak, fluffy egg, and melted cheese on a toasted bagel.", image: "https://www.shutterstock.com/image-photo/cheese-steak-sandwich-on-bagel-260nw-2529004281.jpg", customizable: true, configType: "breakfastSandwich", baseIngredients: ["Steak", "Egg", "Cheese"] },
-      { name: "Lox & Cream Cheese", price: 12.50, desc: "Smoked salmon, cream cheese, tomato, onion & capers on a bagel.", image: "https://media.istockphoto.com/id/619073422/photo/toasted-bagel-with-smoked-salmon-and-cream-cheese.jpg?s=612x612&w=0&k=20&c=n3ptwNBcnqlPOGH-MGOVY0dZNhnPZaeSyZ86tl6URzU=", customizable: true, configType: "loxBagel", baseIngredients: ["Lox", "Cream Cheese", "Tomato", "Onion", "Capers"] },
-      { name: "Bagel & Cream Cheese", price: 3.75, desc: "Any bagel with your choice of cream cheese.", image: "https://t4.ftcdn.net/jpg/02/72/09/61/360_F_272096130_1GOtaQcQ8i9OzRuPSnWnRODuzovzGH17.jpg", customizable: true, configType: "bagelCreamCheese" },
-      { name: "Bagel Breakfast Platter", price: 8.00, desc: "Two eggs, choice of meat, home fries or grits, and a bagel.", image: "https://media.istockphoto.com/id/147094980/photo/breakfast-eggs.jpg?s=612x612&w=0&k=20&c=yICvFV-aMQqV4fcf7UO_LZBssQGAIYpWn0WAiiqKTFw=", customizable: true, configType: "breakfastPlatter" },
-      { name: "Pancake Platter", price: 12.00, desc: "Fluffy pancakes with butter & syrup, choice of meat.", image: "https://frontporchpantry.com/cdn/shop/products/ButtermilkPancakesandSausage_600x.png?v=1653314460", customizable: true, configType: "pancakePlatter" },
-      { name: "Loaded Grits/Hashbrown Bowl", price: 12.00, desc: "Cheesy grits or hashbrowns topped with eggs, meat, and cheese.", image: "https://media.istockphoto.com/id/870293540/photo/homemade-egg-and-potato-breakfast-bowl.jpg?s=612x612&w=0&k=20&c=XVTPm0_N0BS5rulH-6O3h1tN4rVGob1emww4LgGlraU=", customizable: true, configType: "loadedBowl" },
-      { name: "Biscuits & Gravy", price: 9.00, desc: "Buttermilk biscuits smothered in house sausage gravy.", image: "https://www.shutterstock.com/image-photo/homemade-southern-biscuits-gravy-breakfast-600nw-2398373857.jpg", customizable: true, configType: "biscuits" },
-      { name: "Build-Your-Own Omelette", price: 11.00, desc: "Choose your toppings. The first 2 toppings are included, each extra topping is +$1.", image: "https://media.istockphoto.com/id/485040276/photo/herb-omelette-with-chives-and-oregano.jpg?s=612x612&w=0&k=20&c=gWzwd_-neHOmCgirxaaGCwEJElbuYPzY917oWPWp6kI=", customizable: true, configType: "omelette" }
-    ],
-    sides: [
-      { name: "Egg", price: 2.00, desc: "Cooked your way.", image: "https://t3.ftcdn.net/jpg/02/61/46/66/360_F_261466625_cobIfx8hvpMljQ7LdCgHlLbJXQY3eBO7.jpg", customizable: true, configType: "eggSide" },
-      { name: "Grits", price: 2.00, desc: "Creamy southern-style.", image: "https://t4.ftcdn.net/jpg/01/73/48/41/360_F_173484145_c5mPKXygjdT7K3nKkwxgk2t7uwPu5DWX.jpg" },
-      { name: "Hashbrowns", price: 3.00, desc: "Crispy, golden potatoes.", image: "https://t4.ftcdn.net/jpg/03/75/22/41/360_F_375224108_s5BYyF0xtShkzXPCRpPnUDljZbmdddeL.jpg" },
-      { name: "Bacon", price: 4.50, desc: "Thick, crispy strips.", image: "https://t3.ftcdn.net/jpg/01/96/38/66/360_F_196386638_AhvCuN7qr93sbPvMGlvMZCummr5p5eu5.jpg" },
-      { name: "Sausage", price: 4.50, desc: "Choose patty or link.", image: "https://t4.ftcdn.net/jpg/02/31/18/17/360_F_231181712_mZN7AIEouSKWmdEpEaBm90GgNDnAwcDZ.jpg", customizable: true, configType: "sausageSide" },
-      { name: "Ham", price: 4.50, desc: "Warm sliced ham.", image: "https://media.istockphoto.com/id/461174267/photo/traditional-sliced-honey-glazed-ham.jpg?s=612x612&w=0&k=20&c=3mLwaQ2Acn3uLdQM4xr14PwkCk5nB-bW5RMzQt4qSUM=" },
-      { name: "Lox", price: 7.00, desc: "Premium smoked salmon.", image: "https://media.istockphoto.com/id/184615966/photo/close-up-of-rolls-of-smoked-salmon-on-a-gray-background.jpg?s=612x612&w=0&k=20&c=diNxkK5VRibTiLy4RoeSUEgeiyWnGjabBjPzVhJ_eok=" },
-      { name: "Pickles", price: 1.00, desc: "Classic deli spears.", image: "https://st3.depositphotos.com/1692343/16798/i/450/depositphotos_167987792-stock-photo-pickled-organic-cornichon-gherkin-pickles.jpg" },
-      { name: "Pancake", price: 4.00, desc: "Single fluffy pancake.", image: "https://www.shutterstock.com/image-photo/dessert-food-breakfast-sweet-pastry-600nw-2607817623.jpg" },
-      { name: "Biscuit", price: 2.50, desc: "Buttery southern biscuit.", image: "https://www.shutterstock.com/image-photo/homemade-southern-buttermilk-biscuits-ready-600nw-2654749889.jpg" }
-    ],
-    bakery: [
-      { name: "Cookies", price: 2.50, desc: "Fresh-baked classic flavors daily.", image: "https://www.shutterstock.com/image-photo/chocolate-cookies-on-wooden-table-260nw-661622035.jpg", customizable: true, configType: "cookieFlavor" },
-      { name: "Brownie", price: 4.00, desc: "Rich, fudgy chocolate brownie.", image: "https://media.istockphoto.com/id/168731372/photo/fresh-homemade-chocolate-brownie.jpg?s=612x612&w=0&k=20&c=DOWddwc5EBO7gedFIL7SC5absmtACBOefRRc8YLyh-w=" },
-      { name: "Muffins", price: 3.50, desc: "Rotating bakery-style muffins.", image: "https://media.istockphoto.com/id/539085530/photo/mini-chocolate-muffins.jpg?s=612x612&w=0&k=20&c=8novUhwQXssA3s5JBb5Duw-RgRtteaLWYO-d4aBDmQU=", customizable: true, configType: "muffinFlavor" }
-    ],
-    drinks: [
-      { name: "Water Bottle", price: 2.50, desc: "Cold bottled water.", image: "https://t4.ftcdn.net/jpg/02/68/20/25/360_F_268202594_ddPLie6zcUTyJMUid7qMu3VWokTcGd4k.jpg" },
-      { name: "Coffee", price: 2.50, desc: "Choose small or large after selecting.", image: "https://media.istockphoto.com/id/174684628/photo/pouring-fresh-coffee.jpg?s=612x612&w=0&k=20&c=pXOkO9bhWVKA7s4JGtvz9aPMZzkF24noXPdXlMkTQ_A=", customizable: true, configType: "sizedDrink", sizes: { Small: 2.50, Large: 3.00 }, pricePrefix: "From" },
-      { name: "Orange Juice", price: 3.00, desc: "Choose small or large after selecting.", image: "https://t4.ftcdn.net/jpg/01/87/21/31/360_F_187213110_p07ufUC42zVlcaijXRuFFYB4MKsWLgq1.jpg", customizable: true, configType: "sizedDrink", sizes: { Small: 3.00, Large: 4.00 }, pricePrefix: "From" },
-      { name: "Fountain Drink", price: 2.50, desc: "Choose small or large after selecting.", image: "https://www.shutterstock.com/image-photo/fountain-drinks-260nw-2569662019.jpg", customizable: true, configType: "sizedDrink", sizes: { Small: 2.50, Large: 3.00 }, pricePrefix: "From" }
-    ]
-  },
-  lunch: {
-    sandwiches: [
-      { name: "Chicken Salad Sandwich", price: 10.50, desc: "House chicken salad with lettuce & tomato on a toasted bagel.", image: "https://www.shutterstock.com/image-photo/chicken-salad-sandwich-on-bagel-260nw-107028101.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Chicken Salad", "Lettuce", "Tomato"] },
-      { name: "Tuna Melt", price: 12.50, desc: "Creamy tuna salad and melted cheese, grilled hot.", image: "https://www.shutterstock.com/image-photo/view-tuna-salad-bagel-on-600nw-2439260109.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Tuna Salad", "Cheese"] },
-      { name: "BLT", price: 10.50, desc: "Bacon, lettuce, tomato & mayo on a toasted bagel.", image: "https://thumbs.dreamstime.com/b/starting-day-off-cafe-tasty-hearty-breakfast-bagel-blt-sandwich-cut-half-to-show-bursting-ingredients-bacon-233403926.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Bacon", "Lettuce", "Tomato", "Mayo"] },
-      { name: "Reuben", price: 12.50, desc: "Corned beef, Swiss, sauerkraut & Russian dressing, pressed hot.", image: "https://www.eatturkey.org/wp-content/uploads/2019/02/Turkey-Pastrami-Reuben-High.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Corned Beef", "Swiss", "Sauerkraut", "Russian Dressing"] },
-      { name: "Turkey Club", price: 13.00, desc: "Turkey, bacon, lettuce, tomato & mayo, double stacked.", image: "https://media.istockphoto.com/id/466722972/photo/healthy-bagel-with-turkey-and-salad-on-a-rustic-table.jpg?s=612x612&w=0&k=20&c=O0ceRDehMX032Uin50OwN5z_ibVsdaYv1MVTkq59XuE=", customizable: true, configType: "lunchSandwich", baseIngredients: ["Turkey", "Bacon", "Lettuce", "Tomato", "Mayo"] },
-      { name: "Chipotle Turkey Melt", price: 12.50, desc: "Turkey, pepper jack, chipotle mayo, grilled.", image: "https://130248881.cdn6.editmysite.com/uploads/1/3/0/2/130248881/2WL7YIDSXK7SYLOPDQNCB3W2.jpeg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Turkey", "Pepper Jack", "Chipotle Mayo"] },
-      { name: "Jalapeño Chicken Melt", price: 12.50, desc: "Grilled chicken, jalapeños & cheddar with spicy aioli.", image: "https://grumpyshoneybunch.com/wp-content/uploads/2016/07/Chili-Lime-Chicken-Bagel-Pizza-14.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Chicken", "Jalapeños", "Cheddar", "Spicy Aioli"] }
-    ],
-    sides: [
-      { name: "Bags of Chips", price: 2.50, desc: "Crispy packaged chips.", image: "https://t3.ftcdn.net/jpg/01/96/14/08/360_F_196140867_fyw8rYdh2q3dEZb5POmk21fPLBJ3Mkhs.jpg" },
-      { name: "Pickle", price: 1.00, desc: "Classic deli pickle.", image: "https://st3.depositphotos.com/1692343/16798/i/450/depositphotos_167987792-stock-photo-pickled-organic-cornichon-gherkin-pickles.jpg" },
-      { name: "Fries", price: 3.50, desc: "Hot and crispy fries.", image: "https://static.vecteezy.com/system/resources/thumbnails/034/904/621/small/savory-french-fries-cuisine-freshly-prepared-to-perfection-generative-ai-photo.jpg" },
-      { name: "Loaded Fries", price: 6.00, desc: "Choose small or large after selecting.", image: "https://www.shutterstock.com/image-photo/loaded-french-fries-bacon-ranch-600nw-2417314083.jpg", customizable: true, configType: "loadedFries", sizes: { Small: 6.00, Large: 10.00 }, pricePrefix: "From" }
-    ],
-    bakery: [
-      { name: "Cookies", price: 2.50, desc: "Fresh-baked classic flavors daily.", image: "https://www.shutterstock.com/image-photo/chocolate-cookies-on-wooden-table-260nw-661622035.jpg", customizable: true, configType: "cookieFlavor" },
-      { name: "Brownie", price: 4.00, desc: "Rich, fudgy chocolate brownie.", image: "https://media.istockphoto.com/id/168731372/photo/fresh-homemade-chocolate-brownie.jpg?s=612x612&w=0&k=20&c=DOWddwc5EBO7gedFIL7SC5absmtACBOefRRc8YLyh-w=" },
-      { name: "Muffins", price: 3.50, desc: "Rotating bakery-style muffins.", image: "https://media.istockphoto.com/id/539085530/photo/mini-chocolate-muffins.jpg?s=612x612&w=0&k=20&c=8novUhwQXssA3s5JBb5Duw-RgRtteaLWYO-d4aBDmQU=", customizable: true, configType: "muffinFlavor" }
-    ],
-    drinks: [
-      { name: "Water Bottle", price: 2.50, desc: "Cold bottled water.", image: "https://t4.ftcdn.net/jpg/02/68/20/25/360_F_268202594_ddPLie6zcUTyJMUid7qMu3VWokTcGd4k.jpg" },
-      { name: "Coffee", price: 2.50, desc: "Choose small or large after selecting.", image: "https://media.istockphoto.com/id/174684628/photo/pouring-fresh-coffee.jpg?s=612x612&w=0&k=20&c=pXOkO9bhWVKA7s4JGtvz9aPMZzkF24noXPdXlMkTQ_A=", customizable: true, configType: "sizedDrink", sizes: { Small: 2.50, Large: 3.00 }, pricePrefix: "From" },
-      { name: "Orange Juice", price: 3.00, desc: "Choose small or large after selecting.", image: "https://t4.ftcdn.net/jpg/01/87/21/31/360_F_187213110_p07ufUC42zVlcaijXRuFFYB4MKsWLgq1.jpg", customizable: true, configType: "sizedDrink", sizes: { Small: 3.00, Large: 4.00 }, pricePrefix: "From" },
-      { name: "Fountain Drink", price: 2.50, desc: "Choose small or large after selecting.", image: "https://www.shutterstock.com/image-photo/fountain-drinks-260nw-2569662019.jpg", customizable: true, configType: "sizedDrink", sizes: { Small: 2.50, Large: 3.00 }, pricePrefix: "From" }
-    ]
-  }
+
+breakfast: {
+  bagels: [
+    { name: "Plain", price: 2.25, desc: "Classic soft and chewy New York-style bagel.", image: "images/plain-bagel.jpg" },
+    { name: "Everything", price: 2.25, desc: "Garlic, onion, sesame, poppy & salt blend.", image: "images/everything-bagel.jpg" },
+    { name: "Asiago", price: 2.75, desc: "Baked with savory Asiago cheese crust.", image: "images/asiago-bagel.jpg" },
+    { name: "Cinnamon Raisin", price: 2.50, desc: "Sweet cinnamon swirl with plump raisins.", image: "images/cinnamon-raisin-bagel.jpg" },
+    { name: "Blueberry", price: 2.75, desc: "Lightly sweet with real blueberry flavor.", image: "images/blueberry-bagel.jpg" },
+    { name: "Jalapeno Cheddar", price: 2.50, desc: "Cheddar baked in with a mild jalapeño kick.", image: "images/jalapeno-cheddar-bagel.jpg" },
+    { name: "Sesame", price: 2.25, desc: "Toasty sesame seeds on a classic base.", image: "images/sesame-bagel.jpg" },
+    { name: "Salt", price: 2.25, desc: "Traditional bagel topped with coarse salt.", image: "images/salt-bagel.jpg" },
+    { name: "Onion", price: 2.25, desc: "Baked with roasted onion flakes.", image: "images/onion-bagel.jpg" },
+    { name: "Poppy Seed", price: 2.25, desc: "Nutty poppy seed crust.", image: "images/poppy-seed-bagel.jpg" }
+  ],
+
+  creamCheese: [
+    { name: "Plain", price: 1.75, desc: "Classic cream cheese spread.", image: "images/plain-cream-cheese.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 1.75, "7oz": 5.50 }, pricePrefix: "From" },
+    { name: "Strawberry", price: 2.00, desc: "Lightly sweet with real berry flavor.", image: "images/strawberry-cream-cheese.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" },
+    { name: "Scallion", price: 2.00, desc: "Savory cream cheese with fresh green onion.", image: "images/scallion-cream-cheese.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" },
+    { name: "Honey Walnut", price: 2.00, desc: "Sweet honey with crunchy walnuts.", image: "images/honey-walnut-cream-cheese.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" },
+    { name: "Chocolate", price: 2.00, desc: "Dessert-style, creamy cocoa spread.", image: "images/chocolate-cream-cheese.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" },
+    { name: "Caper", price: 2.00, desc: "Briny deli-style spread, perfect with lox.", image: "images/caper-cream-cheese.jpg", customizable: true, configType: "creamCheeseTub", sizes: { "2oz": 2.00, "7oz": 6.00 }, pricePrefix: "From" },
+  ],
+
+  specialties: [
+    { name: "Bacon, Egg & Cheese", price: 8.50, desc: "Crispy bacon, fluffy egg, melted cheese on your choice of bagel.", image: "images/bacon-egg-cheese.jpg", customizable: true, configType: "breakfastSandwich", baseIngredients: ["Bacon", "Egg", "Cheese"] },
+    { name: "Sausage, Egg & Cheese", price: 8.50, desc: "Savory sausage with egg and cheese, toasted hot.", image: "images/sausage-egg-cheese.jpg", customizable: true, configType: "breakfastSandwich", baseIngredients: ["Sausage", "Egg", "Cheese"], requireSausageStyle: true },
+    { name: "Ham, Egg & Cheese", price: 8.50, desc: "Grilled ham, egg, and melty cheese.", image: "images/ham-egg-cheese.jpg", customizable: true, configType: "breakfastSandwich", baseIngredients: ["Ham", "Egg", "Cheese"] },
+    { name: "Steak, Egg & Cheese", price: 8.50, desc: "Grilled steak, fluffy egg, and melted cheese on a toasted bagel.", image: "images/steak-egg-cheese.jpg", customizable: true, configType: "breakfastSandwich", baseIngredients: ["Steak", "Egg", "Cheese"] },
+    { name: "Lox & Cream Cheese", price: 12.50, desc: "Smoked salmon, cream cheese, tomato, onion & capers on a bagel.", image: "images/lox-cream-cheese.jpg", customizable: true, configType: "loxBagel", baseIngredients: ["Lox", "Cream Cheese", "Tomato", "Onion", "Capers"] },
+    { name: "Bagel & Cream Cheese", price: 3.75, desc: "Any bagel with your choice of cream cheese.", image: "images/bagel-cream-cheese.jpg", customizable: true, configType: "bagelCreamCheese" },
+    { name: "Bagel Breakfast Platter", price: 8.00, desc: "Two eggs, choice of meat, home fries or grits, and a bagel.", image: "images/bagel-breakfast-platter.jpg", customizable: true, configType: "breakfastPlatter" },
+    { name: "Pancake Platter", price: 12.00, desc: "Fluffy pancakes with butter & syrup, choice of meat.", image: "images/pancake-platter.jpg", customizable: true, configType: "pancakePlatter" },
+    { name: "Loaded Grits/Hashbrown Bowl", price: 12.00, desc: "Cheesy grits or hashbrowns topped with eggs, meat, and cheese.", image: "images/loaded-grits-hashbrown-bowl.jpg", customizable: true, configType: "loadedBowl" },
+    { name: "Biscuits & Gravy", price: 9.00, desc: "Buttermilk biscuits smothered in house sausage gravy.", image: "images/biscuits-gravy.jpg", customizable: true, configType: "biscuits" },
+    { name: "Build-Your-Own Omelette", price: 11.00, desc: "Choose your toppings. The first 2 toppings are included, each extra topping is +$1.", image: "images/build-your-own-omelette.jpg", customizable: true, configType: "omelette" }
+  ],
+
+  sides: [
+    { name: "Egg", price: 2.00, desc: "Cooked your way.", image: "images/egg.jpg", customizable: true, configType: "eggSide" },
+    { name: "Grits", price: 2.00, desc: "Creamy southern-style.", image: "images/grits.jpg" },
+    { name: "Hashbrowns", price: 3.00, desc: "Crispy, golden potatoes.", image: "images/hashbrowns.jpg" },
+    { name: "Bacon", price: 4.50, desc: "Thick, crispy strips.", image: "images/bacon.jpg" },
+    { name: "Sausage", price: 4.50, desc: "Choose patty or link.", image: "images/sausage.jpg", customizable: true, configType: "sausageSide" },
+    { name: "Ham", price: 4.50, desc: "Warm sliced ham.", image: "images/ham.jpg" },
+    { name: "Lox", price: 7.00, desc: "Premium smoked salmon.", image: "images/lox.jpg" },
+    { name: "Pickles", price: 1.00, desc: "Classic deli spears.", image: "images/pickles.jpg" },
+    { name: "Pancake", price: 4.00, desc: "Single fluffy pancake.", image: "images/pancake.jpg" },
+    { name: "Biscuit", price: 2.50, desc: "Buttery southern biscuit.", image: "images/biscuit.jpg" }
+  ],
+
+  bakery: [
+    { name: "Cookies", price: 2.50, desc: "Fresh-baked classic flavors daily.", image: "images/cookies.jpg", customizable: true, configType: "cookieFlavor" },
+    { name: "Brownie", price: 4.00, desc: "Rich, fudgy chocolate brownie.", image: "images/brownie.jpg" },
+    { name: "Muffins", price: 3.50, desc: "Rotating bakery-style muffins.", image: "images/muffins.jpg", customizable: true, configType: "muffinFlavor" }
+  ],
+
+  drinks: [
+    { name: "Water Bottle", price: 2.50, desc: "Cold bottled water.", image: "images/water-bottle.jpg" },
+    { name: "Coffee", price: 2.50, desc: "Choose small or large after selecting.", image: "images/coffee.jpg", customizable: true, configType: "sizedDrink", sizes: { Small: 2.50, Large: 3.00 }, pricePrefix: "From" },
+    { name: "Orange Juice", price: 3.00, desc: "Choose small or large after selecting.", image: "images/orange-juice.jpg", customizable: true, configType: "sizedDrink", sizes: { Small: 3.00, Large: 4.00 }, pricePrefix: "From" },
+    { name: "Fountain Drink", price: 2.50, desc: "Choose small or large after selecting.", image: "images/fountain-drink.jpg", customizable: true, configType: "sizedDrink", sizes: { Small: 2.50, Large: 3.00 }, pricePrefix: "From" }
+  ]
+}  ,
+lunch: {
+  sandwiches: [
+    { name: "Chicken Salad Sandwich", price: 10.50, desc: "House chicken salad with lettuce & tomato on a toasted bagel.", image: "images/chicken-salad-sandwich.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Chicken Salad", "Lettuce", "Tomato"] },
+    { name: "Tuna Melt", price: 12.50, desc: "Creamy tuna salad and melted cheese, grilled hot.", image: "images/tuna-melt.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Tuna Salad", "Cheese"] },
+    { name: "BLT", price: 10.50, desc: "Bacon, lettuce, tomato & mayo on a toasted bagel.", image: "images/blt.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Bacon", "Lettuce", "Tomato", "Mayo"] },
+    { name: "Reuben", price: 12.50, desc: "Corned beef, Swiss, sauerkraut & Russian dressing, pressed hot.", image: "images/reuben.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Corned Beef", "Swiss", "Sauerkraut", "Russian Dressing"] },
+    { name: "Turkey Club", price: 13.00, desc: "Turkey, bacon, lettuce, tomato & mayo, double stacked.", image: "images/turkey-club.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Turkey", "Bacon", "Lettuce", "Tomato", "Mayo"] },
+    { name: "Chipotle Turkey Melt", price: 12.50, desc: "Turkey, pepper jack, chipotle mayo, grilled.", image: "images/chipotle-turkey-melt.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Turkey", "Pepper Jack", "Chipotle Mayo"] },
+    { name: "Jalapeño Chicken Melt", price: 12.50, desc: "Grilled chicken, jalapeños & cheddar with spicy aioli.", image: "images/jalapeno-chicken-melt.jpg", customizable: true, configType: "lunchSandwich", baseIngredients: ["Chicken", "Jalapeños", "Cheddar", "Spicy Aioli"] }
+  ],
+
+  sides: [
+    { name: "Bags of Chips", price: 2.50, desc: "Crispy packaged chips.", image: "images/bags-of-chips.jpg" },
+    { name: "Pickle", price: 1.00, desc: "Classic deli pickle.", image: "images/pickle.jpg" },
+    { name: "Fries", price: 3.50, desc: "Hot and crispy fries.", image: "images/fries.jpg" },
+    { name: "Loaded Fries", price: 6.00, desc: "Choose small or large after selecting.", image: "images/loaded-fries.jpg", customizable: true, configType: "loadedFries", sizes: { Small: 6.00, Large: 10.00 }, pricePrefix: "From" }
+  ],
+
+  bakery: [
+    { name: "Cookies", price: 2.50, desc: "Fresh-baked classic flavors daily.", image: "images/cookies.jpg", customizable: true, configType: "cookieFlavor" },
+    { name: "Brownie", price: 4.00, desc: "Rich, fudgy chocolate brownie.", image: "images/brownie.jpg" },
+    { name: "Muffins", price: 3.50, desc: "Rotating bakery-style muffins.", image: "images/muffins.jpg", customizable: true, configType: "muffinFlavor" }
+  ],
+
+  drinks: [
+    { name: "Water Bottle", price: 2.50, desc: "Cold bottled water.", image: "images/water-bottle.jpg" },
+    { name: "Coffee", price: 2.50, desc: "Choose small or large after selecting.", image: "images/coffee.jpg", customizable: true, configType: "sizedDrink", sizes: { Small: 2.50, Large: 3.00 }, pricePrefix: "From" },
+    { name: "Orange Juice", price: 3.00, desc: "Choose small or large after selecting.", image: "images/orange-juice.jpg", customizable: true, configType: "sizedDrink", sizes: { Small: 3.00, Large: 4.00 }, pricePrefix: "From" },
+    { name: "Fountain Drink", price: 2.50, desc: "Choose small or large after selecting.", image: "images/fountain-drink.jpg", customizable: true, configType: "sizedDrink", sizes: { Small: 2.50, Large: 3.00 }, pricePrefix: "From" }
+  ]
+}
 };
 
 let currentTab = "breakfast";
@@ -338,7 +346,7 @@ function bindGlobalButtons() {
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", async () => {
       if (!cart.length) {
-        alert("Your cart is empty.");
+        showToast("Your cart is empty.");
         return;
       }
       renderCheckoutSummary();
@@ -511,11 +519,7 @@ function getOptionByName(options, optionName) {
 function mapSupabaseRowsToMenu(rows, optionsByMenuItemId = {}) {
   const liveMenu = structuredClone(defaultMenu);
 
-  for (const mealKey in liveMenu) {
-    for (const sectionKey in liveMenu[mealKey]) {
-      liveMenu[mealKey][sectionKey] = [];
-    }
-  }
+
 
   for (const row of rows) {
     const meal = String(row.meal || "").trim().toLowerCase();
@@ -565,7 +569,7 @@ function mapSupabaseRowsToMenu(rows, optionsByMenuItemId = {}) {
       name: row.name,
       price: Number(row.price),
       desc: row.description || "",
-      image: row.image_url || imageBank.bagel,
+      image: row.image_url || imageBank[section] || imageBank.bagel,
       customizable: fallbackItem?.customizable || false,
       configType: fallbackItem?.configType,
       baseIngredients: fallbackItem?.baseIngredients,
@@ -577,14 +581,6 @@ function mapSupabaseRowsToMenu(rows, optionsByMenuItemId = {}) {
       eggStyleOptions: eggStyleValues,
       meatChoiceOptions: meatChoiceValues
     });
-  }
-
-  for (const mealKey in defaultMenu) {
-    for (const sectionKey in defaultMenu[mealKey]) {
-      if (!liveMenu[mealKey][sectionKey].length) {
-        liveMenu[mealKey][sectionKey] = structuredClone(defaultMenu[mealKey][sectionKey]);
-      }
-    }
   }
 
   return liveMenu;
@@ -720,7 +716,6 @@ function addSimpleItemToCart(item, meal, section) {
 
   persistCart();
   renderCart();
-  alert(`${item.name} added to cart.`);
 }
 
 function updateCartToggle() {
@@ -976,7 +971,6 @@ function orderAgain(orderId, previousOrders) {
   persistCart();
   renderCart();
   renderCheckoutSummary();
-  alert("Previous order added to cart.");
 }
 
 async function placeOrder() {
@@ -1103,7 +1097,7 @@ await fetch("/.netlify/functions/send-order-email", {
   closeModal("checkoutModal");
   clearCheckoutInputs();
 
-  alert(`Order ${orderNumber} placed successfully!`);
+showOrderSuccess(orderNumber);
 }
 
 function clearCheckoutInputs() {
@@ -1143,7 +1137,6 @@ function openCustomizationModal(item, meal, section) {
     persistCart();
     renderCart();
     closeModal("itemModal");
-    alert(`${builtItem.item.name} added to cart.`);
   }, { once: true });
 }
 
@@ -1180,7 +1173,7 @@ function editCartItem(cartItemId) {
   }
 
   if (!sourceItem || !sourceItem.customizable) {
-    alert("This item can’t be edited.");
+    showToast("This item can’t be edited.");
     return;
   }
 
@@ -1803,7 +1796,7 @@ function initAdminEditor() {
     resetBtn.addEventListener("click", async () => {
       await fetchLiveMenu();
       populateAdminSelects();
-      alert("Reloaded menu from Supabase.");
+      showToast("Reloaded menu from Supabase.");
     });
   }
 
@@ -1874,7 +1867,7 @@ async function saveEditedItem() {
 
   const currentItem = menuData[meal][section][index];
   if (!currentItem?.id) {
-    alert("This item is missing a Supabase row id.");
+    showToast("This item is missing a Supabase row id.");
     return;
   }
 
@@ -1894,13 +1887,13 @@ async function saveEditedItem() {
 
   if (error) {
     console.error("Update failed:", error);
-    alert(`Failed to update item: ${error.message}`);
+    showToast(`Failed to update item: ${error.message}`);
     return;
   }
 
   await fetchLiveMenu();
   populateAdminSelects();
-  alert("Item updated.");
+  showToast("Item updated.");
 }
 
 async function deleteEditedItem() {
@@ -1911,11 +1904,9 @@ async function deleteEditedItem() {
 
   const currentItem = menuData[meal][section][index];
   if (!currentItem?.id) {
-    alert("This item is missing a Supabase row id.");
+    showToast("This item is missing a Supabase row id.");
     return;
   }
-
-  if (!confirm("Delete this item?")) return;
 
   const { data, error } = await supabaseClient
     .from("menu_items")
@@ -1924,19 +1915,19 @@ async function deleteEditedItem() {
     .select();
 
   if (error) {
-    alert(`Failed to delete item: ${error.message}`);
+    showToast(`Failed to delete item: ${error.message}`);
     return;
   }
 
   if (!data || !data.length) {
-    alert("No row was deleted.");
+    showToast("No row was deleted.");
     return;
   }
 
   await fetchLiveMenu();
   populateAdminSelects();
   renderMenu();
-  alert("Item deleted.");
+  showToast("Item deleted.");
 }
 
 function populateAddSections() {
@@ -1963,7 +1954,7 @@ async function addNewItem() {
   if (!meal || !section) return;
 
   if (!name || !price || !desc) {
-    alert("Please fill in name, price, and description.");
+    showToast("Please fill in name, price, and description.");
     return;
   }
 
@@ -1987,12 +1978,12 @@ async function addNewItem() {
     .select();
 
   if (error) {
-    alert(`Failed to add item: ${error.message}`);
+    showToast(`Failed to add item: ${error.message}`);
     return;
   }
 
   if (!data || !data.length) {
-    alert("No item was added.");
+    showToast("No item was added.");
     return;
   }
 
@@ -2005,7 +1996,7 @@ async function addNewItem() {
     if (field) field.value = "";
   });
 
-  alert("New item added.");
+  showToast("New item added.");
 }
 
 async function renderCashierOrders() {
@@ -2067,12 +2058,10 @@ async function renderCashierOrders() {
       <p><strong>Tax:</strong> ${money(order.tax || 0)}</p>
       <p><strong>Status:</strong> <span class="order-status ${statusClass(order.order_status)}">${order.order_status || "Pending"}</span></p>
       <div class="order-actions">
-        <button class="primary-btn small-btn order-action" data-id="${order.id}" data-status="Accepted">Accept</button>
-        <button class="ghost-btn small-btn order-action" data-id="${order.id}" data-status="Kitchen">Send to Kitchen</button>
+        <button class="primary-btn small-btn order-action" data-id="${order.id}" data-status="Kitchen">Accept & Send to Kitchen</button>
         <button class="danger-btn small-btn order-action" data-id="${order.id}" data-status="Denied">Deny</button>
-        <button class="ghost-btn small-btn order-action" data-id="${order.id}" data-status="Ready">Mark Ready</button>
-        <button class="ghost-btn small-btn order-action" data-id="${order.id}" data-status="Completed">Complete</button>
-      </div>
+        <button class="complete-btn small-btn order-action" data-id="${order.id}" data-status="Completed">Complete</button>
+        </div>
     </div>
   `).join("");
 
@@ -2148,7 +2137,6 @@ async function renderKitchenOrders() {
 
       <div class="order-actions">
         <button class="primary-btn small-btn kitchen-action" data-id="${order.id}" data-status="Ready">Mark Ready</button>
-        <button class="ghost-btn small-btn kitchen-action" data-id="${order.id}" data-status="Completed">Complete</button>
       </div>
     </div>
   `).join("");
@@ -2159,15 +2147,36 @@ async function renderKitchenOrders() {
 }
 
 async function updateOrderStatus(id, status) {
-  const { error } = await supabaseClient
+  const { data: updatedOrders, error } = await supabaseClient
     .from("orders")
     .update({ order_status: status })
-    .eq("id", Number(id));
+    .eq("id", Number(id))
+    .select();
 
   if (error) {
     console.error("Failed to update order status:", error);
-    alert(`Failed to update status: ${error.message}`);
+    showToast(`Failed to update status: ${error.message}`, "error");
     return;
+  }
+
+  const updatedOrder = updatedOrders?.[0];
+
+  if (status === "Completed" && updatedOrder?.email) {
+    try {
+      await fetch("/.netlify/functions/send-order-ready-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          orderNumber: updatedOrder.order_number || updatedOrder.id,
+          name: updatedOrder.customer_name || "Customer",
+          email: updatedOrder.email
+        })
+      });
+    } catch (emailError) {
+      console.error("Ready email failed:", emailError);
+    }
   }
 
   await renderCashierOrders();
@@ -2198,3 +2207,77 @@ function closeModal(id) {
 function capitalize(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
+
+function showOrderSuccess(orderNumber) {
+  document.body.innerHTML = `
+    <div style="
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#f7f1e8;
+      font-family:Inter, sans-serif;
+      padding:24px;
+      text-align:center;
+    ">
+      <div style="
+        background:white;
+        padding:36px;
+        border-radius:22px;
+        max-width:480px;
+        box-shadow:0 18px 40px rgba(50,24,7,0.12);
+      ">
+        <h1 style="color:#5d2f05;margin-bottom:12px;">Order Placed!</h1>
+        <p style="font-size:18px;color:#6f5c4f;">
+          Thank you for ordering from Bagels'R'us.
+        </p>
+        <p style="font-size:20px;">
+          <strong>Order #${orderNumber}</strong>
+        </p>
+        <a href="index.html" style="
+          display:inline-block;
+          margin-top:22px;
+          background:#8b4c00;
+          color:white;
+          padding:14px 22px;
+          border-radius:14px;
+          text-decoration:none;
+          font-weight:700;
+        ">
+          Back to Home
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+function showToast(message, type = "info") {
+  const oldToast = document.getElementById("siteToast");
+  if (oldToast) oldToast.remove();
+
+  const toast = document.createElement("div");
+  toast.id = "siteToast";
+  toast.textContent = message;
+
+  toast.style.cssText = `
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 9999;
+    background: ${type === "error" ? "#b53a2d" : "#8b4c00"};
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    max-width: 280px;
+  `;
+
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 2500);
+}
+
