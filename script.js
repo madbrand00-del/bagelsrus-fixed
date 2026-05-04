@@ -15,7 +15,7 @@ const STORAGE_KEYS = {
   menuVersion: `${STORAGE_PREFIX}_menu_version`
 };
 
-const MENU_VERSION = 8;
+const MENU_VERSION = 9;
 
 const sectionsConfig = {
   breakfast: [
