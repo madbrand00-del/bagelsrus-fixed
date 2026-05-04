@@ -15,7 +15,7 @@ const STORAGE_KEYS = {
   menuVersion: `${STORAGE_PREFIX}_menu_version`
 };
 
-const MENU_VERSION = 9;
+const MENU_VERSION = 11;
 
 const sectionsConfig = {
   breakfast: [
@@ -2304,3 +2304,67 @@ function showToast(message, type = "info") {
   }, 2500);
 }
 
+function normalizeMenuNameFixed(name) {
+  return String(name || "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+bagel$/i, "")
+    .replace(/\s+cream cheese$/i, "");
+}
+
+mapSupabaseRowsToMenu = function(rows, optionsByMenuItemId = {}) {
+  const liveMenu = structuredClone(defaultMenu);
+
+  for (const row of rows) {
+    const meal = String(row.meal || "").trim().toLowerCase();
+    const section = normalizeSectionKey(row.section);
+
+    if (!liveMenu[meal] || !liveMenu[meal][section]) continue;
+
+    const fallbackItem = liveMenu[meal][section].find(item =>
+      normalizeMenuNameFixed(item.name) === normalizeMenuNameFixed(row.name)
+    );
+
+    const itemOptions = optionsByMenuItemId[row.id] || [];
+    const sizeOption = getOptionByName(itemOptions, "Size");
+
+    let supabaseSizes = fallbackItem?.sizes;
+    let supabasePricePrefix = fallbackItem?.pricePrefix;
+
+    if (sizeOption?.values?.length) {
+      supabaseSizes = {};
+      for (const value of sizeOption.values) {
+        supabaseSizes[value.value_name] =
+          Number(row.price) + Number(value.price_adjustment || 0);
+      }
+      supabasePricePrefix = "From";
+    }
+
+    const newItem = {
+      id: row.id,
+      menuItemId: row.id,
+      name: fallbackItem?.name || row.name,
+      price: Number(row.price),
+      desc: row.description || fallbackItem?.desc || "",
+      image: row.image_url || fallbackItem?.image || imageBank[section] || imageBank.bagel,
+      customizable: fallbackItem?.customizable || false,
+      configType: fallbackItem?.configType,
+      baseIngredients: fallbackItem?.baseIngredients,
+      requireSausageStyle: fallbackItem?.requireSausageStyle,
+      sizes: supabaseSizes,
+      pricePrefix: supabasePricePrefix
+    };
+
+    const existingIndex = liveMenu[meal][section].findIndex(item =>
+      normalizeMenuNameFixed(item.name) === normalizeMenuNameFixed(row.name)
+    );
+
+    if (existingIndex >= 0) {
+      liveMenu[meal][section][existingIndex] = newItem;
+    } else {
+      liveMenu[meal][section].push(newItem);
+    }
+  }
+
+  return liveMenu;
+};
