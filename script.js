@@ -987,8 +987,8 @@ async function placeOrder() {
   const email = normalizeEmail(document.getElementById("guestEmail")?.value || "");
   const phone = normalizePhone(document.getElementById("guestPhone")?.value || "");
   const notes = document.getElementById("orderNotes")?.value.trim() || "";
-  const orderType = document.querySelector('input[name="orderType"]:checked')?.value || "Pickup";
-  const deliveryAddress = document.getElementById("deliveryAddress")?.value.trim() || "";
+  const orderType = "Pickup";
+const deliveryAddress = "";
 
   if (!name) {
     checkoutMessageEl.textContent = "Please enter your name.";
@@ -1002,11 +1002,6 @@ async function placeOrder() {
 
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     checkoutMessageEl.textContent = "Please enter a valid email address.";
-    return;
-  }
-
-  if (orderType === "Delivery" && !deliveryAddress) {
-    checkoutMessageEl.textContent = "Please enter a delivery address.";
     return;
   }
 
