@@ -15,7 +15,7 @@ const STORAGE_KEYS = {
   menuVersion: `${STORAGE_PREFIX}_menu_version`
 };
 
-const MENU_VERSION = 11;
+const MENU_VERSION = 13;
 
 const sectionsConfig = {
   breakfast: [
@@ -100,7 +100,6 @@ breakfast: {
     { name: "Bagel Breakfast Platter", price: 8.00, desc: "Two eggs, choice of meat, home fries or grits, and a bagel.", image: "images/bagel-breakfast-platter.jpg", customizable: true, configType: "breakfastPlatter" },
     { name: "Pancake Platter", price: 12.00, desc: "Fluffy pancakes with butter & syrup, choice of meat.", image: "images/pancake-platter.jpg", customizable: true, configType: "pancakePlatter" },
     { name: "Loaded Grits/Hashbrown Bowl", price: 12.00, desc: "Cheesy grits or hashbrowns topped with eggs, meat, and cheese.", image: "images/loaded-grits-hashbrown-bowl.jpg", customizable: true, configType: "loadedBowl" },
-    { name: "Biscuits & Gravy", price: 9.00, desc: "Buttermilk biscuits smothered in house sausage gravy.", image: "images/biscuits-gravy.jpg", customizable: true, configType: "biscuits" },
     { name: "Build-Your-Own Omelette", price: 11.00, desc: "Choose your toppings. The first 2 toppings are included, each extra topping is +$1.", image: "images/build-your-own-omelette.jpg", customizable: true, configType: "omelette" }
   ],
 
@@ -142,7 +141,6 @@ lunch: {
   ],
 
   sides: [
-    { name: "Bags of Chips", price: 2.50, desc: "Crispy packaged chips.", image: "images/bags-of-chips.jpg" },
     { name: "Pickle", price: 1.00, desc: "Classic deli pickle.", image: "images/pickle.jpg" },
     { name: "Fries", price: 3.50, desc: "Hot and crispy fries.", image: "images/fries.jpg" },
     { name: "Loaded Fries", price: 6.00, desc: "Choose small or large after selecting.", image: "images/loaded-fries.jpg", customizable: true, configType: "loadedFries", sizes: { Small: 6.00, Large: 10.00 }, pricePrefix: "From" }
