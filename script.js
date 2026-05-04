@@ -563,24 +563,34 @@ function mapSupabaseRowsToMenu(rows, optionsByMenuItemId = {}) {
       supabasePricePrefix = "From";
     }
 
-    liveMenu[meal][section].push({
-      id: row.id,
-      menuItemId: row.id,
-      name: row.name,
-      price: Number(row.price),
-      desc: row.description || "",
-      image: row.image_url || imageBank[section] || imageBank.bagel,
-      customizable: fallbackItem?.customizable || false,
-      configType: fallbackItem?.configType,
-      baseIngredients: fallbackItem?.baseIngredients,
-      requireSausageStyle: fallbackItem?.requireSausageStyle,
-      sizes: supabaseSizes,
-      pricePrefix: supabasePricePrefix,
-      bagelTypeOptions: bagelTypeValues,
-      cheeseOptions: cheeseValues,
-      eggStyleOptions: eggStyleValues,
-      meatChoiceOptions: meatChoiceValues
-    });
+    const existingIndex = liveMenu[meal][section].findIndex(item =>
+  String(item.name || "").trim().toLowerCase() === String(row.name || "").trim().toLowerCase()
+);
+
+const newItem = {
+  id: row.id,
+  menuItemId: row.id,
+  name: row.name,
+  price: Number(row.price),
+  desc: row.description || "",
+  image: row.image_url || imageBank[section] || imageBank.bagel,
+  customizable: fallbackItem?.customizable || false,
+  configType: fallbackItem?.configType,
+  baseIngredients: fallbackItem?.baseIngredients,
+  requireSausageStyle: fallbackItem?.requireSausageStyle,
+  sizes: supabaseSizes,
+  pricePrefix: supabasePricePrefix,
+  bagelTypeOptions: bagelTypeValues,
+  cheeseOptions: cheeseValues,
+  eggStyleOptions: eggStyleValues,
+  meatChoiceOptions: meatChoiceValues
+};
+
+if (existingIndex >= 0) {
+  liveMenu[meal][section][existingIndex] = newItem;
+} else {
+  liveMenu[meal][section].push(newItem);
+}
   }
 
   return liveMenu;
