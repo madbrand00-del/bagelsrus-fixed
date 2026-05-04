@@ -105,7 +105,7 @@ button {
   padding: 48px 20px;
   background-image:
     linear-gradient(rgba(30, 16, 8, 0.52), rgba(30, 16, 8, 0.58)),
-    url('https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/greenbaywi/Bagels_75AF7A3A-E593-D57E-E28B14B565C188E7-75af7922a22e4d1_75af9ae0-f80b-eea4-30994b809e884d7d.jpg');
+    url("images/hero.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -668,7 +668,7 @@ textarea {
   min-height: 64vh;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/greenbaywi/Bagels_75AF7A3A-E593-D57E-E28B14B565C188E7-75af7922a22e4d1_75af9ae0-f80b-eea4-30994b809e884d7d.jpg");
+    url("images/hero.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -816,7 +816,7 @@ textarea {
   height: 250px;
   background-image:
     linear-gradient(rgba(30, 16, 8, 0.30), rgba(30, 16, 8, 0.30)),
-    url("https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/greenbaywi/Bagels_75AF7A3A-E593-D57E-E28B14B565C188E7-75af7922a22e4d1_75af9ae0-f80b-eea4-30994b809e884d7d.jpg");
+    url("images/hero.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -954,7 +954,7 @@ textarea {
   min-height: 260px;
   background-image:
     linear-gradient(rgba(30, 16, 8, 0.45), rgba(30, 16, 8, 0.45)),
-    url("https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/greenbaywi/Bagels_75AF7A3A-E593-D57E-E28B14B565C188E7-75af7922a22e4d1_75af9ae0-f80b-eea4-30994b809e884d7d.jpg");
+    url("images/hero.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -1050,7 +1050,7 @@ textarea {
   min-height: 260px;
   background-image:
     linear-gradient(rgba(30, 16, 8, 0.45), rgba(30, 16, 8, 0.45)),
-    url("https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/greenbaywi/Bagels_75AF7A3A-E593-D57E-E28B14B565C188E7-75af7922a22e4d1_75af9ae0-f80b-eea4-30994b809e884d7d.jpg");
+    url("images/hero.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -1183,7 +1183,7 @@ textarea {
   min-height: 260px;
   background-image:
     linear-gradient(rgba(30, 16, 8, 0.45), rgba(30, 16, 8, 0.45)),
-    url("https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/greenbaywi/Bagels_75AF7A3A-E593-D57E-E28B14B565C188E7-75af7922a22e4d1_75af9ae0-f80b-eea4-30994b809e884d7d.jpg");
+    url("images/hero.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -1612,7 +1612,7 @@ textarea {
   min-height: 240px;
   background-image:
     linear-gradient(rgba(30, 16, 8, 0.45), rgba(30, 16, 8, 0.45)),
-    url("https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/crm/greenbaywi/Bagels_75AF7A3A-E593-D57E-E28B14B565C188E7-75af7922a22e4d1_75af9ae0-f80b-eea4-30994b809e884d7d.jpg");
+    url("images/hero.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
